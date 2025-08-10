@@ -1,0 +1,491 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #fce4ec, #c71585);
+  color: #800040;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #c71585;
+  color: white;
+  padding: 20px 20px;
+  text-align: center;
+  z-index: 5000;
+  font-family: 'Poppins', sans-serif;
+}
+
+header h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+nav ul li a {
+  font-size: 14px;
+}
+
+.destaque-show {
+  background-color: #c71585;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 10px 0;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 15px;
+  margin: 10px auto;
+  width: fit-content;
+  max-width: 90%;
+}
+
+body {
+  padding-top: 50px;
+}
+
+.carrossel {
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  animation: fadein 1s;
+}
+
+.slide.ativo {
+  display: block;
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.btn-slide {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(199, 21, 133, 0.7);
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 6px;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-slide:hover {
+  background-color: rgba(199, 21, 133, 1);
+}
+
+.btn-anterior {
+  left: 10px;
+}
+
+.btn-proximo {
+  right: 10px;
+}
+
+#btnTopo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #c71585;
+  color: white;
+  border: none;
+  width: 48px;
+  height: 48px;
+  font-size: 28px;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(199, 21, 133, 0.7);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#btnTopo:hover {
+  opacity: 1;
+}
+
+.slide > section {
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.box-destaque {
+  background-color: #fce4ec;
+  color: #800040;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(199, 21, 133, 0.2);
+  max-width: 900px;
+  margin: 30px auto;
+  line-height: 1.5;
+}
+
+.mensagem-principal {
+  max-width: 700px;
+  margin: 40px auto 20px auto;
+  padding: 30px 25px;
+  background: linear-gradient(135deg, #c71585, #f50057);
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(199, 21, 133, 0.7);
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.mensagem-principal h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.mensagem-rodape {
+  max-width: 700px;
+  margin: 20px auto 40px auto;
+  padding: 20px 25px;
+  background: #fce4ec;
+  color: #800040;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(199, 21, 133, 0.3);
+}
+
+.servico-dancas h3 {
+  margin-bottom: 20px;
+  color: #c71585;
+  font-weight: 800;
+  font-size: 2rem;
+  text-shadow: 1px 1px 3px rgba(199, 21, 133, 0.4);
+}
+
+.fotos-dancarina {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.foto-dancarina {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 12px auto;
+  background-color: #fce4ec;
+  border-radius: 50%;
+  border: 2px solid #c71585;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  transition: filter 0.3s ease;
+}
+
+.foto-dancarina::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+}
+
+.foto-dancarina:hover {
+  filter: brightness(85%);
+  animation: balanco-pulso 1.5s ease-in-out infinite alternate;
+}
+
+.foto-dancarina:hover::after {
+  animation: brilho-passando 1s ease forwards;
+}
+
+@keyframes balanco-pulso {
+  0%   { transform: scale(1.08) rotate(3deg); }
+  50%  { transform: scale(1.12) rotate(0deg); }
+  100% { transform: scale(1.08) rotate(-3deg); }
+}
+
+@keyframes brilho-passando {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+.cervejas-unificadas p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.destaque-produtos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.produto-destaque {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(199, 21, 133, 0.3);
+  padding: 20px;
+  text-align: center;
+  max-width: 260px;
+  transition: transform 0.3s ease;
+}
+
+.produto-destaque:hover {
+  transform: scale(1.08);
+}
+
+.produto-destaque img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.produto-destaque h3 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  color: #c71585;
+}
+
+.produto-destaque p {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #d81b60;
+}
+
+/* Aba quarto */
+.quarto {
+  background: #fce4ec;
+  border-radius: 20px;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 30px 40px;
+  box-shadow: 0 8px 25px rgba(216, 27, 96, 0.3);
+  color: #800040;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.quarto h3 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #c71585;
+  font-weight: 800;
+  text-shadow: 1px 1px 3px rgba(199, 21, 133, 0.5);
+}
+
+.quarto p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 12px 0;
+  color: #b00057;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.quarto p:hover {
+  color: #d81b60;
+}
+
+footer {
+  background-color: #c71585;
+  color: white;
+  padding: 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footer-info, .footer-social, .footer-form {
+  flex: 1 1 300px;
+}
+
+.footer-info h3,
+.footer-social h3,
+.footer-form h3 {
+  margin-bottom: 10px;
+  color: #f4a6c9;
+}
+
+.footer-social p {
+  color: #f4a6c9;
+}
+
+.footer-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-form input,
+.footer-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.footer-form textarea {
+  resize: none;
+  height: 80px;
+}
+
+.footer-form button {
+  background-color: #c71585;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.footer-form button:hover {
+  background-color: #e91e63;
+}
+
+.copy {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .destaque-produtos {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .produto-destaque {
+    max-width: 280px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-info,
+  .footer-social,
+  .footer-form {
+    flex: 1 1 100%;
+    max-width: 400px;
+  }
+}
+
+.quartos {
+  background: #fce4ec;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px 40px;
+  box-shadow: 0 8px 25px rgba(216, 27, 96, 0.3);
+  color: #800040;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.quartos h3 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #c71585;
+  font-weight: 800;
+  text-shadow: 1px 1px 3px rgba(199, 21, 133, 0.5);
+}
+
+/* Aumentar tamanho dos quadrados das imagens dos quartos */
+.galeria-quartos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.imagem-quarto {
+  width: 400px;
+  height: 300px;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(216, 27, 96, 0.4);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.imagem-quarto:hover {
+  transform: scale(1.05);
+}
+
+.texto-seo {
+  margin: 20px auto 10px auto;
+  padding: 20px 30px;
+  background: linear-gradient(135deg, #c71585, #f50057);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(199, 21, 133, 0.7);
+  text-align: center;
+  line-height: 1.5;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
